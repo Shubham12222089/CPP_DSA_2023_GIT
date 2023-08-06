@@ -127,23 +127,44 @@ using namespace std;
 //11111
 //11111
 
+// int main(){
+//     int r,c;
+//     cin>>r;
+//     cin>>c;
+//     for (int i = 1; i <= r; i++)
+//     {
+//         for (int j = 1; j <= c; j++)
+//         {
+//             if (i==(r+1)/2 && j==(c+1)/2)
+//             {
+//                 cout<<"0";
+//             }
+//             else{
+//                 cout<<"1";
+//             }
+//         }
+//         cout<<"\n";
+//     }
+    
+// }
+
+//pattern 8---------------
+//11111
+//22222
+//33333
+//44444
+//55555
 int main(){
-    int r,c;
-    cin>>r;
+    int c,r;
     cin>>c;
-    for (int i = 1; i <= r; i++)
-    {
+    cin>>r;
+    for(int i = 1;i<=r;i++){
         for (int j = 1; j <= c; j++)
         {
-            if (i==(r+1)/2 && j==(c+1)/2)
-            {
-                cout<<"0";
-            }
-            else{
-                cout<<"1";
-            }
+            cout<<i;
         }
         cout<<"\n";
+        
     }
     
 }
