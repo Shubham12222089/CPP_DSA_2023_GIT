@@ -52,6 +52,11 @@ using namespace std;
 
 
 //pattern --- 4------------
+// 11111
+// 00000
+// 11111
+// 00000
+// 11111
 // int main(){
 //     int c,r;
 //     cin>>c;
@@ -70,7 +75,11 @@ using namespace std;
 // }
 
 //pattern 5 ----------------------
-
+// 10101
+// 10101
+// 10101
+// 10101
+// 10101
 // int main(){
 //     int c,r;
 //     cin>>c;
@@ -89,23 +98,52 @@ using namespace std;
 // }
 
 //pattern 6-----------------
-//1
-//1
-//1
-//100
+//1111
+//1001
+//1001
+//1001
+// int main(){
+//     int c,r;
+//     cin>>c;
+//     cin>>r;
+//     for(int i = 1;i<=r;i++){
+//         for(int j = 1;j<=c;j++){
+//             if(i==1 || i==r || j==1 || j==c){
+//                 cout<<"1";
+//             }
+//             else{
+//                 cout<<"0";
+//             }
+//         }
+//         cout<<"\n";
+//     }
+// }
+
+//pattern 7---------
+
+//11111
+//11111
+//11011
+//11111
+//11111
+
 int main(){
-    int c,r;
-    cin>>c;
+    int r,c;
     cin>>r;
-    for(int i = 1;i<=r;i++){
-        for(int j = 1;j<=c;j++){
-            if(i==1 || i==r || j==1 || j==c){
-                cout<<"1";
+    cin>>c;
+    for (int i = 1; i <= r; i++)
+    {
+        for (int j = 1; j <= c; j++)
+        {
+            if (i==(r+1)/2 && j==(c+1)/2)
+            {
+                cout<<"0";
             }
             else{
-                cout<<"0";
+                cout<<"1";
             }
         }
         cout<<"\n";
     }
+    
 }
