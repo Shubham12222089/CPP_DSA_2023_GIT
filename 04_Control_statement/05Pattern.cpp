@@ -154,14 +154,36 @@ using namespace std;
 //33333
 //44444
 //55555
+// int main(){
+//     int c,r;
+//     cin>>c;
+//     cin>>r;
+//     for(int i = 1;i<=r;i++){
+//         for (int j = 1; j <= c; j++)
+//         {
+//             cout<<i;
+//         }
+//         cout<<"\n";
+        
+//     }
+    
+// }
+
+//12345
+//23456
+//34567
+//45678
+//56789
+
 int main(){
     int c,r;
     cin>>c;
     cin>>r;
-    for(int i = 1;i<=r;i++){
-        for (int j = 1; j <= c; j++)
+    for (int i = 1; i <= r; i++)
+    {
+        for (int j = i; j <= c+i; j++)
         {
-            cout<<i;
+            cout<<j;
         }
         cout<<"\n";
         
