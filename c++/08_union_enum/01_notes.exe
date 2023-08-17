@@ -1,0 +1,22 @@
+/*
+    struct
+        -structure is defined from struct keyword.
+        -size of a structure is sum of all individual element inside it. 
+        -struct is a location of user defined data types stored at different memory
+         location.
+        -not memory efficient.
+    union
+        -union is defined with union keyword. 
+        -size of union is the largest element inside it. 
+        -union is a collection of user defined data types stored at
+         same memory location.
+        -memory efficient.
+        -unions can only hold one member value at a time.
+
+    Enums
+        -Enumeration is defined with enum keyboard
+        -size of enum is 4 X (number of constant
+        inside ) as each constant is an integer of 4 bytes.
+        -enums is collection of user defined data types for
+        representing  
+*/
