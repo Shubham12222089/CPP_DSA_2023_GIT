@@ -43,58 +43,98 @@
 
 
 //
+// #include<iostream>
+// using namespace std;
+
+// int firstOccb(int arr[],int n,int key){
+//     int start = 0;
+//     int end = n-1;
+//     int mid = (start + end)/2;
+//     int ans = -1;
+
+//     while(start<=end){
+//         if(arr[mid] == key){
+//             ans = mid;
+//             end = mid-1;
+//         }
+//         else if(key>arr[mid]){
+//             start = mid+1;
+//         }
+//         else{
+//             end = mid-1;
+//         }
+//         mid = (start+end)/2;
+//     }
+//     return ans;
+// }
+
+// int lastOccr(int arr[],int n,int key){
+//     int start = 0;
+//     int end = n-1;
+//     int mid = (start + end)/2;
+//     int ans = -1;
+//     while(start<=end){
+//         if(arr[mid] == key){
+//             ans = mid;
+//             start = mid+1;
+//         }
+//         else if(key>arr[mid]){
+//             start = mid+1;
+//         }
+//         else{
+//             end = mid-1;
+//         }
+//         mid = (start+end)/2;
+//     }
+//     return ans;
+// }
+
+// int main(){
+//     int arr[5] = {1,2,3,3,5};
+
+//     cout<<"First Occurance of 3 is: "<< firstOccb(arr,5,3)<<endl;
+//     cout<<"Last Occurance of 3 is: "<<lastOccr(arr,5,3);
+
+
+// }
+
 #include<iostream>
 using namespace std;
 
-int firstOccb(int arr[],int n,int key){
-    int start = 0;
-    int end = n-1;
-    int mid = (start + end)/2;
-    int ans = -1;
-
-    while(start<=end){
-        if(arr[mid] == key){
-            ans = mid;
-            end = mid-1;
-        }
-        else if(key>arr[mid]){
-            start = mid+1;
-        }
-        else{
-            end = mid-1;
-        }
-        mid = (start+end)/2;
+void original(int n,int arr[],int temp){
+    for (int i = 0; i < n; i++)
+    {
+        cout<<arr[i]<<" ";
     }
-    return ans;
+    
 }
 
-int lastOccr(int arr[],int n,int key){
-    int start = 0;
-    int end = n-1;
-    int mid = (start + end)/2;
-    int ans = -1;
-    while(start<=end){
-        if(arr[mid] == key){
-            ans = mid;
-            start = mid+1;
-        }
-        else if(key>arr[mid]){
-            start = mid+1;
-        }
-        else{
-            end = mid-1;
-        }
-        mid = (start+end)/2;
+void updated(int n,int arr[],int temp){
+    
+    for (int i = n; i > 0; i--)
+    {
+        arr[i]=arr[i-1];
     }
-    return ans;
+    arr[0] = temp;
+    
 }
 
 int main(){
-    int arr[5] = {1,2,3,3,5};
-
-    cout<<"First Occurance of 3 is: "<< firstOccb(arr,5,3)<<endl;
-    cout<<"Last Occurance of 3 is: "<<lastOccr(arr,5,3);
-
-
+    int n,temp;
+    cin>>n;
+    int arr[100];
+    for (int i = 0; i < n; i++)
+    {
+        cin>>arr[i];
+    }
+    cout<<"enter the value you want to insert: ";
+    cin>>temp;
+    original(n,arr,temp);
+    updated(n,arr,temp);
+    for (int i = 0; i < n+1; i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+    
+    
 }
-

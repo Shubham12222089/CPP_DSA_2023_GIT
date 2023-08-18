@@ -1,5 +1,5 @@
-#include<iostream>
-using namespace std;
+// #include<iostream>
+// using namespace std;
 
 // int main(){
 //     int n;
@@ -83,75 +83,64 @@ using namespace std;
     
 // }
 
-//reverse an array
+//first and last occurance
+#include<iostream>
+using namespace std;
 
-// int rev(int n,int arr[]){
-//     int start = 0;
-//     int end = n-1;
-//     while(start<=end){
-//         swap(arr[start],arr[end]);
-//         start++;
-//         end--;
-//     }
-// }
-// void print(int n,int arr[]){
-//     for (int i = 0; i < n; i++)
-//     {
-//         cout<<arr[i]<<" ";
-//     }
-    
-// }
-
-// int main(){
-//     int n;
-//     cout<<"Enter the size: ";
-//     cin>>n;
-//     int arr[100];
-//     for (int i = 0; i < n; i++)
-//     {
-//         cin>>arr[i];
-//     }
-//     cout<<"without reverse: ";
-//     for (int i = 0; i < n; i++)
-//     {
-//         cout<<arr[i]<<" ";
-//     }
-//     cout<<"\n";
-//     rev(n,arr);
-//     cout<<"after reverse: ";
-//     print(n,arr);
-    
-// }
-
-//// You are given an array of integers, arr, containing n elements. 
-//Write a C++ function int linearSearch(int arr[], int n, int target) to perform a linear search and find the index of the first occurrence of the target element within the array. If the target element is not found, 
-//the function should return -1.
-
-//linear search
-
-void linearsearch(int n,int arr[],int target){
-    for (int i = 0; i < n; i++)
-    {
-        if(arr[i]==target){
-            cout<<target<<" is present at index "<<i<<endl;
-            return; // Exit the function after finding the target
+int firstOccr(int n,int arr[],int key){
+    int start = 0;
+    int end = n-1;
+    int ans = -1;
+    int mid = (start + end)/2;
+    while(start <= end){
+        if(arr[mid] == key){
+            ans =  mid;
+            end = mid - 1;
         }
+        else if(key>arr[mid]){
+            start = mid + 1;
+        }
+        else{
+            end = mid - 1;
+        }
+        mid = (start + end)/2;
     }
-    // If the loop completes without finding the target
-    cout<<"-1";
-    
+    return ans;
 }
+
+int lastOccr(int n,int arr[],int key){
+    int start = 0;
+    int end = n-1;
+    int ans = -1;
+    int mid = (start + end)/2;
+    while(start <= end){
+        if(arr[mid] == key){
+            ans =  mid;
+            start = mid + 1;
+        }
+        else if(key>arr[mid]){
+            start = mid + 1;
+        }
+        else{
+            end = mid - 1;
+        }
+        mid = (start + end)/2;
+    }
+    return ans;
+}
+
 int main(){
-    int n,target;
-    cout<<"enter the size: ";
+    int n;
     cin>>n;
     int arr[100];
     for (int i = 0; i < n; i++)
     {
         cin>>arr[i];
     }
-    cout<<"the value you want to search: ";
-    cin>>target;
-    linearsearch(n,arr,target);
+    int key;
+    cout<<"Enter key: ";
+    cin>>key;
+    cout<<"First occurance of "<<key <<" is at "<<firstOccr(n,arr,key)<<endl;
+    cout<<"Last occurance of "<<key <<" is at "<<lastOccr(n,arr,key)<<endl;
     
 }
