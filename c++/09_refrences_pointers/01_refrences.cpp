@@ -2,23 +2,23 @@
 using namespace std;
 
 //Reference variables
-// is a reference to an eisting variable.
+// is a reference to an existing variable.
 void test(int &n){
     n++;
     cout<<"value of n from test method is: "<<n<<endl;
 }
-int& test2(int n){
-    int num = n;
-    int &ans = num;
-    return ans;
-}
+// int& test2(int n){  //bad practice
+//     int num = n;
+//     int &ans = num;
+//     return ans;
+// }
 
 int main(){
 
     int n;
     cin>>n;
-    
-    test2(n);
+
+    //test2(n);
 
     // test(n);
 
