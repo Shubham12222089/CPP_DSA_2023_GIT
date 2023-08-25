@@ -1,0 +1,58 @@
+time complexity:- 
+* it is the amount of time taken by an algorithm to run.
+* as a function of length of the input.
+
+Notation:
+Big O notation(for upper bound)  -->  theta notation(for avg-case complexity) --> omega notation(lower bound)
+
+
+constant time:-> O(1)
+linear time :-> O(n)
+logarithmic time :-> O(log n)
+quadratic time:-> O(n**2)
+cubic time:-> O(n**3)
+
+----- same as 12th class-------
+
+complexity order:
+O(n!) --->highest complexity order
+O(2**n)
+O(n**3)
+O(n**2)
+O(nlogn)
+O(n)
+O(log n)
+O(1)
+
+that means o(1) is the fastest.
+_____________________
+Questions
+
+1. f(n) = 2n**2 +3n
+ans bt upper bound: 
+i.e ignore lower degree and constants as well, so space complexity will be: O(n**2).
+
+2. f(n) = 4n**4 + 3n**3
+ans will be : O(n**4)
+
+3. f(n) = n**2 + log n
+ans will be O(n**2) bcoz n**2 has higher complexity.
+
+#for 2 loops if first from 0-n and second from 0-m then complexity wiull be O(n+m).
+#in case of nested loop it will be O(m*n).
+
+#imp================================================
+*stuck in time limit Exceed.
+then use 10**8 opertation rule.
+that is most of the modern machine can perform 10**8 operation per second.
+
+-----------------space complexity------------------
+
+
+
+
+
+
+
+
+

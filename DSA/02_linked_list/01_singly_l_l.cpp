@@ -38,6 +38,7 @@ void insertAtHead(Node* &head, int val){
     head=n;
 }
 
+
 int main(){
     Node *head = NULL;
     insertAtTail(head,1);
