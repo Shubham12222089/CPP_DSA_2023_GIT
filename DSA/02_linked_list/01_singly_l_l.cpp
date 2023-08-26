@@ -37,7 +37,32 @@ void insertAtHead(Node* &head, int val){
     n->next=head;
     head=n;
 }
+void searchVal(Node* &head, int d){
 
+}
+void deleteval(Node* &head,int val){
+    Node* temp = head;
+    if (head == NULL){
+        return;
+    }
+    while(temp->next->data != val){
+        temp=temp->next;
+    }
+    Node* toDelete = temp -> next;
+    temp->next = temp->next->next;
+    delete toDelete;
+}
+void deletionathead(Node* &head, int val){
+    //Node* temp = head;
+    // head = temp->next;
+    // Node* toDelete=temp;
+    // delete toDelete;
+    //Both are correct;
+    Node* toDelete = head;
+    head = head->next;
+    delete toDelete;
+
+}
 
 int main(){
     Node *head = NULL;
@@ -47,5 +72,11 @@ int main(){
     insertAtTail(head,3);
 
     insertAtHead(head,10);
+    display(head);
+    cout<<endl;
+    deleteval(head, 2);
+    display(head);
+    cout<<endl;
+    deletionathead(head, 10);
     display(head);
 }

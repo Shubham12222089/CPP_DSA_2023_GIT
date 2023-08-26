@@ -7,7 +7,7 @@ using namespace std;
 //protected
 
 class Building{
-    public: //public so it isd accessible
+    public: //public so it is accessible
     int door;
     string doorColor;
 

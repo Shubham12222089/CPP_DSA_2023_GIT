@@ -8,7 +8,7 @@ int selection_shorting(int n,int arr[]){
         int minIndex = i;
         for (int j = i+1; j < n; j++)
         {
-            if(arr[j]<arr[i]){
+            if(arr[j]<arr[minIndex]){
                 minIndex = j;
             }
         }
