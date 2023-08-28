@@ -57,48 +57,125 @@ using namespace std;
 // }
 
 
-#include <iostream>
+// #include <iostream>
 
-void selectionSort(int arr[], int n) {
-    for (int i = 0; i < n - 1; ++i) {
-        int minIndex = i;
-        for (int j = i + 1; j < n; ++j) {
-            if (arr[j] < arr[minIndex]) {
-                minIndex = j;
-            }
-        }
+// void selectionSort(int arr[], int n) {
+//     for (int i = 0; i < n - 1; ++i) {
+//         int minIndex = i;
+//         for (int j = i + 1; j < n; ++j) {
+//             if (arr[j] < arr[minIndex]) {
+//                 minIndex = j;
+//             }
+//         }
         
-        // Swap the found minimum element with the element at index i
-        int temp = arr[i];
-        arr[i] = arr[minIndex];
-        arr[minIndex] = temp;
+//         // Swap the found minimum element with the element at index i
+//         int temp = arr[i];
+//         arr[i] = arr[minIndex];
+//         arr[minIndex] = temp;
 
-        // Print the array at this iteration
-        std::cout << "Iteration " << i + 1 << ": ";
-        for (int k = 0; k < n; ++k) {
-            std::cout << arr[k] << " ";
-        }
-        std::cout << std::endl;
-    }
+//         // Print the array at this iteration
+//         std::cout << "Iteration " << i + 1 << ": ";
+//         for (int k = 0; k < n; ++k) {
+//             std::cout << arr[k] << " ";
+//         }
+//         std::cout << std::endl;
+//     }
+// }
+
+// int main() {
+//     int arr[] = {64, 25, 12, 22, 11};
+//     int n = sizeof(arr) / sizeof(arr[0]);
+
+//     std::cout << "Original array: ";
+//     for (int i = 0; i < n; ++i) {
+//         std::cout << arr[i] << " ";
+//     }
+//     std::cout << std::endl;
+
+//     selectionSort(arr, n);
+
+//     std::cout << "Sorted array: ";
+//     for (int i = 0; i < n; ++i) { 
+//         std::cout << arr[i] << " ";
+//     }
+//     std::cout << std::endl;
+
+//     return 0;
+// }
+
+// Iterative C++ program to reverse a linked list
+#include <bits/stdc++.h>
+using namespace std;
+
+/* Link list node */
+struct Node {
+	int data;
+	struct Node* next;
+	Node(int data)
+	{
+		this->data = data;
+		next = NULL;
+	}
+};
+
+struct LinkedList {
+	Node* head;
+	LinkedList() { head = NULL; }
+
+	/* Function to reverse the linked list */
+	void reverse()
+	{
+		// Initialize current, previous and next pointers
+		Node* current = head;
+		Node *prev = NULL, *next = NULL;
+
+		while (current != NULL) {
+			// Store next
+			next = current->next;
+			// Reverse current node's pointer
+			current->next = prev;
+			// Move pointers one position ahead.
+			prev = current;
+			current = next;
+		}
+		head = prev;
+	}
+
+	/* Function to print linked list */
+	void print()
+	{
+		struct Node* temp = head;
+		while (temp != NULL) {
+			cout << temp->data << " ";
+			temp = temp->next;
+		}
+	}
+
+	void push(int data)
+	{
+		Node* temp = new Node(data);
+		temp->next = head;
+		head = temp;
+	}
+};
+
+/* Driver code*/
+int main()
+{
+	/* Start with the empty list */
+	LinkedList ll;
+	ll.push(20);
+	ll.push(4);
+	ll.push(15);
+	ll.push(85);
+
+	cout << "Given linked list\n";
+	ll.print();
+
+	ll.reverse();
+
+	cout << "\nReversed linked list \n";
+	ll.print();
+	return 0;
 }
 
-int main() {
-    int arr[] = {64, 25, 12, 22, 11};
-    int n = sizeof(arr) / sizeof(arr[0]);
-
-    std::cout << "Original array: ";
-    for (int i = 0; i < n; ++i) {
-        std::cout << arr[i] << " ";
-    }
-    std::cout << std::endl;
-
-    selectionSort(arr, n);
-
-    std::cout << "Sorted array: ";
-    for (int i = 0; i < n; ++i) {
-        std::cout << arr[i] << " ";
-    }
-    std::cout << std::endl;
-
-    return 0;
-}
