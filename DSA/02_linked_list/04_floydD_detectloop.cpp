@@ -72,6 +72,43 @@ bool detectLoop(Node* head){
     return false;
 }
 
+Node* floydDectetionloop(Node* head){
+    if(head==NULL){
+        return NULL;
+    }
+
+    Node* slow = head;
+    Node* fast = head;
+
+    while(slow!=NULL && fast!=NULL){
+        slow = slow->next;
+
+        fast = fast->next;
+        if(fast != NULL){
+            fast = fast->next;
+        }
+        if(slow == fast){
+            return slow;
+        }
+    }
+    return NULL;
+}
+Node* getstartedNode(Node* head){
+    if(head==NULL){
+        return NULL;
+    }
+
+    Node* intersection = floydDectetionloop(head);
+
+    Node* slow = head;
+
+    while(slow!=intersection){
+        slow = slow->next;
+        intersection = intersection->next;
+    }
+    return slow;
+}
+
 int main(){
     Node* head=NULL;
     insertattail(head, 10);
@@ -87,5 +124,13 @@ int main(){
     else{
         cout<<"No"<<endl;
     }
+    if(floydDectetionloop(head)){
+        cout<<"Loop"<<endl;
+    }
+    else{
+        cout<<"No"<<endl;
+    }
+
+    
 
 }
