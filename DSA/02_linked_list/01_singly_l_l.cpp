@@ -79,4 +79,7 @@ int main(){
     cout<<endl;
     deletionathead(head, 10);
     display(head);
+    cout<<endl;
+    insertAtHead(head,2);
+    display(head);
 }
