@@ -322,6 +322,7 @@ void floydDetection(Node* &head){
     }
 }
 
+
 int main(){
     Node* head=NULL; 
     insertattail(head,3);
@@ -338,5 +339,5 @@ int main(){
     }
 
     floydDetection(head);
-
 }
+    
