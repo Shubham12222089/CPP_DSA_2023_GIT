@@ -30,6 +30,7 @@ void display(Node* head){
         cout<< temp->data <<"->";
         temp = temp->next;
     }
+    cout<<"NULL";
 }
 
 void insertAtHead(Node* &head, int val){
@@ -63,6 +64,20 @@ void deletionathead(Node* &head, int val){
     delete toDelete;
 
 }
+Node* reverse(Node* &head){
+    Node* prev;
+    Node* curr=head;
+    Node* next;
+
+    while(curr!=NULL){
+        next = curr->next;
+        curr->next=prev;
+
+        prev=curr;
+        curr=next;
+    }
+    return prev;
+}
 
 int main(){
     Node *head = NULL;
@@ -73,13 +88,16 @@ int main(){
 
     insertAtHead(head,10);
     display(head);
+    // cout<<endl;
+    // deleteval(head, 2);
+    // display(head);
+    // cout<<endl;
+    // deletionathead(head, 10);
+    // display(head);
+    // cout<<endl;
+    // insertAtHead(head,2);
+    // display(head);
     cout<<endl;
-    deleteval(head, 2);
-    display(head);
-    cout<<endl;
-    deletionathead(head, 10);
-    display(head);
-    cout<<endl;
-    insertAtHead(head,2);
-    display(head);
+    Node* newHead = reverse(head);
+    display(newHead);
 }

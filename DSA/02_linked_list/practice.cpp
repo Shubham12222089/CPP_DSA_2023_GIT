@@ -322,6 +322,19 @@ void floydDetection(Node* &head){
     }
 }
 
+Node* reverse(Node* &head){
+    Node* prev;
+    Node* curr=head;
+    Node* next;
+
+    while(curr!=NULL){
+        next = curr->next;
+        curr->next=prev;
+
+        prev=curr;
+        curr=next;
+    }
+}
 
 int main(){
     Node* head=NULL; 
@@ -339,5 +352,10 @@ int main(){
     }
 
     floydDetection(head);
+
+    cout<<endl;
+
+    Node* newHead = reverse(head);
+    display(newHead);
 }
     
