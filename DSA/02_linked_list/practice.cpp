@@ -239,11 +239,118 @@
 // }
 
 //===================circular linked list============================
-#include<iostream>
-#include<map>
+// #include<iostream>
+// #include<map>
+// using namespace std;
+
+// class Node{
+//     public:
+//     int data;
+//     Node* next;
+//     Node(int val){
+//         data=val;
+//         next=NULL;
+//     }
+// };
+
+// void insertattail(Node* &head,int val){
+//     Node* n = new Node(val);
+//     Node* temp = head;
+//     if(head==NULL){
+//         n->next=n;
+//         head=n;
+//         return;
+//     }
+//     while(temp->next!=head){
+//         temp=temp->next;
+//     }
+//     temp->next=n;
+//     n->next=head;
+// }
+
+// void display(Node* &head){
+//     Node* temp=head;
+//     if(head==NULL){
+//         return;
+//     }
+//     while(temp->next!=head){
+//         cout<<temp->data<<"->";
+//         temp=temp->next;
+//     }
+//     cout<<temp->data<<endl;
+
+// }
+
+// //loop detection using map 
+// bool loopdetection(Node* &head){
+//     Node* temp = head;
+//     if(head==NULL){
+//         return false;
+//     }
+
+//     map <Node*, bool> visited;
+//     while(temp!=NULL){
+//         if(visited[temp]==true){
+//             return true;
+//         }
+//         visited[temp] = true;
+//         temp=temp->next;
+//     }
+//     return false;
+
+// }
+
+// //loop detection using floyd method
+
+// void floydDetection(Node* &head){
+//     Node* slow = head;
+//     Node* fast = head;
+
+//     while(fast != NULL && fast->next!=NULL){
+//         slow=slow->next;
+//         fast=fast->next->next;
+
+//         if(slow==fast){
+//             slow=head;
+//             while(slow!=fast){
+//                 slow=slow->next;
+//                 fast=fast->next;
+//             }
+//             cout<<"Loop exists, starting point : "<<slow->data<<endl;
+//             return;
+//         }
+//     }
+// }
+
+
+// int main(){
+//     Node* head=NULL; 
+//     insertattail(head,3);
+//     insertattail(head,10);
+//     insertattail(head,20);
+//     insertattail(head,30);
+//     display(head);
+
+//     if(loopdetection){
+//         cout<<"yes"<<endl;
+//     }
+//     else{
+//         cout<<"No"<<endl;
+//     }
+
+//     floydDetection(head);
+
+
+
+    
+// }
+    
+//------------------sorting of linked list---------------------------
+#include <iostream>
+
 using namespace std;
 
-class Node{
+class Node {
     public:
     int data;
     Node* next;
@@ -253,109 +360,35 @@ class Node{
     }
 };
 
-void insertattail(Node* &head,int val){
+void xyz(Node* &head,int val){
     Node* n = new Node(val);
     Node* temp = head;
     if(head==NULL){
-        n->next=n;
         head=n;
         return;
     }
-    while(temp->next!=head){
+    while(temp->next!=NULL){
         temp=temp->next;
     }
     temp->next=n;
-    n->next=head;
 }
-
-void display(Node* &head){
+void display(Node* head){
     Node* temp=head;
-    if(head==NULL){
-        return;
-    }
-    while(temp->next!=head){
+    while(temp!=NULL){
         cout<<temp->data<<"->";
         temp=temp->next;
     }
-    cout<<temp->data<<endl;
-
+    cout<<"NULL";
 }
 
-//loop detection using map 
-bool loopdetection(Node* &head){
-    Node* temp = head;
-    if(head==NULL){
-        return false;
-    }
-
-    map <Node*, bool> visited;
-    while(temp!=NULL){
-        if(visited[temp]==true){
-            return true;
-        }
-        visited[temp] = true;
-        temp=temp->next;
-    }
-    return false;
-
-}
-
-//loop detection using floyd method
-
-void floydDetection(Node* &head){
-    Node* slow = head;
-    Node* fast = head;
-
-    while(fast != NULL && fast->next!=NULL){
-        slow=slow->next;
-        fast=fast->next->next;
-
-        if(slow==fast){
-            slow=head;
-            while(slow!=fast){
-                slow=slow->next;
-                fast=fast->next;
-            }
-            cout<<"Loop exists, starting point : "<<slow->data<<endl;
-            return;
-        }
-    }
-}
-
-Node* reverse(Node* &head){
-    Node* prev;
-    Node* curr=head;
-    Node* next;
-
-    while(curr!=NULL){
-        next = curr->next;
-        curr->next=prev;
-
-        prev=curr;
-        curr=next;
-    }
-}
-
-int main(){
-    Node* head=NULL; 
-    insertattail(head,3);
-    insertattail(head,10);
-    insertattail(head,20);
-    insertattail(head,30);
+int main() {
+    Node* head=NULL;
+    xyz(head,1);
+    xyz(head,2);
+    xyz(head,3);
+    xyz(head,10);
     display(head);
-
-    if(loopdetection){
-        cout<<"yes"<<endl;
-    }
-    else{
-        cout<<"No"<<endl;
-    }
-
-    floydDetection(head);
-
-    cout<<endl;
-
-    Node* newHead = reverse(head);
-    display(newHead);
-}
     
+
+
+}
