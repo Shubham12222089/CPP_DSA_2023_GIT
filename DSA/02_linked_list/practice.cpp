@@ -351,44 +351,79 @@
 using namespace std;
 
 class Node {
-    public:
+public:
     int data;
     Node* next;
-    Node(int val){
-        data=val;
-        next=NULL;
+    Node(int val) {
+        data = val;
+        next = NULL;
     }
 };
 
-void xyz(Node* &head,int val){
+void xyz(Node*& head, int val) {
     Node* n = new Node(val);
     Node* temp = head;
-    if(head==NULL){
-        head=n;
+    if (head == NULL) {
+        head = n;
         return;
     }
-    while(temp->next!=NULL){
-        temp=temp->next;
+    while (temp->next != NULL) {
+        temp = temp->next;
     }
-    temp->next=n;
+    temp->next = n;
 }
-void display(Node* head){
-    Node* temp=head;
-    while(temp!=NULL){
-        cout<<temp->data<<"->";
-        temp=temp->next;
+
+void display(Node* head) {
+    Node* temp = head;
+    while (temp != NULL) {
+        cout << temp->data << "->";
+        temp = temp->next;
     }
-    cout<<"NULL";
+    cout << "NULL";
+}
+
+Node* merge(Node* n1, Node* n2) {
+    if (n1 == NULL)
+        return n2;
+    if (n2 == NULL)
+        return n1;
+
+    Node* result;
+    
+    if (n1->data <= n2->data) {
+        result = n1;
+        result->next = merge(n1->next, n2);
+    } else {
+        result = n2;
+        result->next = merge(n1, n2->next);
+    }
+
+    return result;
 }
 
 int main() {
-    Node* head=NULL;
-    xyz(head,1);
-    xyz(head,2);
-    xyz(head,3);
-    xyz(head,10);
-    display(head);
-    
+    Node* head1 = NULL;
+    xyz(head1, 1);
+    xyz(head1, 3);
+    xyz(head1, 5);
 
+    Node* head2 = NULL;
+    xyz(head2, 2);
+    xyz(head2, 4);
+    xyz(head2, 6);
 
+    cout << "List 1: ";
+    display(head1);
+    cout << endl;
+
+    cout << "List 2: ";
+    display(head2);
+    cout << endl;
+
+    Node* mergedHead = merge(head1, head2);
+
+    cout << "Merged Linked List: ";
+    display(mergedHead);
+
+    return 0;
 }
