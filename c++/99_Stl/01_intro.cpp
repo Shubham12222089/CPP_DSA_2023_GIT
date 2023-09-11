@@ -24,8 +24,15 @@ int main(){
     cout<< "Element at 1 is : "<<vector1.at(1)<<endl;
 
     //change
-    vector1.at(1) = 22;
+    //vector1.at(1) = 22;
     
+    cout<<"vector before adding : ";
+    for(auto i : vector1){
+        cout<< i <<" ";
+    } cout<<endl;
+
+    //delete
+    vector1.pop_back();
     cout<<"Updated vector: ";
     for(auto i : vector1){
         cout<< i <<" ";

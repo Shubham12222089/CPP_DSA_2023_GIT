@@ -239,191 +239,192 @@
 // }
 
 //===================circular linked list============================
-// #include<iostream>
-// #include<map>
-// using namespace std;
-
-// class Node{
-//     public:
-//     int data;
-//     Node* next;
-//     Node(int val){
-//         data=val;
-//         next=NULL;
-//     }
-// };
-
-// void insertattail(Node* &head,int val){
-//     Node* n = new Node(val);
-//     Node* temp = head;
-//     if(head==NULL){
-//         n->next=n;
-//         head=n;
-//         return;
-//     }
-//     while(temp->next!=head){
-//         temp=temp->next;
-//     }
-//     temp->next=n;
-//     n->next=head;
-// }
-
-// void display(Node* &head){
-//     Node* temp=head;
-//     if(head==NULL){
-//         return;
-//     }
-//     while(temp->next!=head){
-//         cout<<temp->data<<"->";
-//         temp=temp->next;
-//     }
-//     cout<<temp->data<<endl;
-
-// }
-
-// //loop detection using map 
-// bool loopdetection(Node* &head){
-//     Node* temp = head;
-//     if(head==NULL){
-//         return false;
-//     }
-
-//     map <Node*, bool> visited;
-//     while(temp!=NULL){
-//         if(visited[temp]==true){
-//             return true;
-//         }
-//         visited[temp] = true;
-//         temp=temp->next;
-//     }
-//     return false;
-
-// }
-
-// //loop detection using floyd method
-
-// void floydDetection(Node* &head){
-//     Node* slow = head;
-//     Node* fast = head;
-
-//     while(fast != NULL && fast->next!=NULL){
-//         slow=slow->next;
-//         fast=fast->next->next;
-
-//         if(slow==fast){
-//             slow=head;
-//             while(slow!=fast){
-//                 slow=slow->next;
-//                 fast=fast->next;
-//             }
-//             cout<<"Loop exists, starting point : "<<slow->data<<endl;
-//             return;
-//         }
-//     }
-// }
-
-
-// int main(){
-//     Node* head=NULL; 
-//     insertattail(head,3);
-//     insertattail(head,10);
-//     insertattail(head,20);
-//     insertattail(head,30);
-//     display(head);
-
-//     if(loopdetection){
-//         cout<<"yes"<<endl;
-//     }
-//     else{
-//         cout<<"No"<<endl;
-//     }
-
-//     floydDetection(head);
-
-
-
-    
-// }
-    
-//------------------sorting of linked list---------------------------
-#include <iostream>
-
+#include<iostream>
+#include<map>
 using namespace std;
 
-class Node {
-public:
+class Node{
+    public:
     int data;
     Node* next;
-    Node(int val) {
-        data = val;
-        next = NULL;
+    Node(int val){
+        data=val;
+        next=NULL;
     }
 };
 
-void xyz(Node*& head, int val) {
+void insertattail(Node* &head,int val){
     Node* n = new Node(val);
     Node* temp = head;
-    if (head == NULL) {
-        head = n;
+    if(head==NULL){
+        n->next=n;
+        head=n;
         return;
     }
-    while (temp->next != NULL) {
-        temp = temp->next;
+    while(temp->next!=head){
+        temp=temp->next;
     }
-    temp->next = n;
+    temp->next=n;
+    n->next=head;
 }
 
-void display(Node* head) {
+void display(Node* &head){
+    Node* temp=head;
+    if(head==NULL){
+        return;
+    }
+    while(temp->next!=head){
+        cout<<temp->data<<"->";
+        temp=temp->next;
+    }
+    cout<<temp->data<<endl;
+
+}
+
+//loop detection using map 
+bool loopdetection(Node* &head){
     Node* temp = head;
-    while (temp != NULL) {
-        cout << temp->data << "->";
-        temp = temp->next;
+    if(head==NULL){
+        return false;
     }
-    cout << "NULL";
+
+    map <Node*, bool> visited;
+    while(temp!=NULL){
+        if(visited[temp]==true){
+            return true;
+        }
+        visited[temp] = true;
+        temp=temp->next;
+    }
+    return false;
+
 }
 
-Node* merge(Node* n1, Node* n2) {
-    if (n1 == NULL)
-        return n2;
-    if (n2 == NULL)
-        return n1;
+//loop detection using floyd method
 
-    Node* result;
+void floydDetection(Node* &head){
+    Node* slow = head;
+    Node* fast = head;
+
+    while(fast != NULL && fast->next!=NULL){
+        slow=slow->next;
+        fast=fast->next->next;
+
+        if(slow==fast){
+            slow=head;
+            while(slow!=fast){
+                slow=slow->next;
+                fast=fast->next;
+            }
+            cout<<"Loop exists, starting point : "<<slow->data<<endl;
+            return;
+        }
+    }
+}
+
+
+int main(){
+    Node* head=NULL; 
+    insertattail(head,3);
+    insertattail(head,10);
+    insertattail(head,20);
+    insertattail(head,30);
+    display(head);
+
+    if(loopdetection){
+        cout<<"yes"<<endl;
+    }
+    else{
+        cout<<"No"<<endl;
+    }
+
+    floydDetection(head);
+
+
+
     
-    if (n1->data <= n2->data) {
-        result = n1;
-        result->next = merge(n1->next, n2);
-    } else {
-        result = n2;
-        result->next = merge(n1, n2->next);
-    }
-
-    return result;
 }
+    
+//------------------sorting of linked list---------------------------
+// #include <iostream>
 
-int main() {
-    Node* head1 = NULL;
-    xyz(head1, 1);
-    xyz(head1, 3);
-    xyz(head1, 5);
+// using namespace std;
 
-    Node* head2 = NULL;
-    xyz(head2, 2);
-    xyz(head2, 4);
-    xyz(head2, 6);
+// class Node {
+// public:
+//     int data;
+//     Node* next;
+//     Node(int val) {
+//         data = val;
+//         next = NULL;
+//     }
+// };
 
-    cout << "List 1: ";
-    display(head1);
-    cout << endl;
+// void xyz(Node*& head, int val) {
+//     Node* n = new Node(val);
+//     Node* temp = head;
+//     if (head == NULL) {
+//         head = n;
+//         return;
+//     }
+//     while (temp->next != NULL) {
+//         temp = temp->next;
+//     }
+//     temp->next = n;
+// }
 
-    cout << "List 2: ";
-    display(head2);
-    cout << endl;
 
-    Node* mergedHead = merge(head1, head2);
+// void display(Node* head) {
+//     Node* temp = head;
+//     while (temp != NULL) {
+//         cout << temp->data << "->";
+//         temp = temp->next;
+//     }
+//     cout << "NULL";
+// }
 
-    cout << "Merged Linked List: ";
-    display(mergedHead);
+// Node* merge(Node* n1, Node* n2) {
+//     if (n1 == NULL)
+//         return n2;
+//     if (n2 == NULL)
+//         return n1;
 
-    return 0;
-}
+//     Node* result;
+    
+//     if (n1->data <= n2->data) {
+//         result = n1;
+//         result->next = merge(n1->next, n2);
+//     } else {
+//         result = n2;
+//         result->next = merge(n1, n2->next);
+//     }
+
+//     return result;
+// }
+
+// int main() {
+//     Node* head1 = NULL;
+//     xyz(head1, 1);
+//     xyz(head1, 3);
+//     xyz(head1, 5);
+
+//     Node* head2 = NULL;
+//     xyz(head2, 2);
+//     xyz(head2, 4);
+//     xyz(head2, 6);
+
+//     cout << "List 1: ";
+//     display(head1);
+//     cout << endl;
+
+//     cout << "List 2: ";
+//     display(head2);
+//     cout << endl;
+
+//     Node* mergedHead = merge(head1, head2);
+
+//     cout << "Merged Linked List: ";
+//     display(mergedHead);
+
+//     return 0;
+// }

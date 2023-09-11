@@ -5,11 +5,11 @@ enum season{
     summer,
     winter,
     autumn,
-    spring pe //we can write these in single line also.
+    spring //we can write these in single line also.
 };
 
 int main(){
     season s1;
-    s1 = spring pe;
+    s1 = spring;
     cout << s1 << endl;
 }

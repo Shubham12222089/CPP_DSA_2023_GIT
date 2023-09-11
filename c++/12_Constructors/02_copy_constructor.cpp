@@ -22,7 +22,7 @@ class Number{
     }
 
     void display(){
-        cout<<"THe value of a is: " <<a<<endl;
+        cout<<"The value of a is: " <<a<<endl;
     }
 };
 

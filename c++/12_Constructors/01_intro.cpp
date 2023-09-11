@@ -4,7 +4,7 @@
 // //A constructor is a special type of member
 // //function that is called automatically when an object is created
 // //constructor's name is same as the class name.
-// //constuctor function got called first in class.
+// //constructor function got called first in class.
 
 // class Student{
 //     public:
@@ -129,8 +129,8 @@ class Rectangle{
 };
 
 int main(){
-    Rectangle r1;
-    Rectangle r2(5,4);
+    Rectangle r1;//for constructors
+    Rectangle r2(5,4); 
     int Area=r2.getArea();
     int Perimeter = r2.getPerimeter();
 

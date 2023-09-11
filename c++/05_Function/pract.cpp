@@ -48,57 +48,57 @@
 
 //---------------------------------
 //decimal to binary
-// #include<iostream>
-// #include<math.h>
-// #include<string.h>
-// using namespace std;
-
-// int main(){
-
-//     int n;
-//     cin>>n;
-//     int base=1,temp=0;
-    
-//     while(n!=0){
-//         int last_digit = n%10;
-//         n/=10;
-        
-//         temp += last_digit * base;
-
-//         base = base * 2;
-//     }
-//     cout<<temp;
-
-// }
-
-//--------friend function function ----------------------
 #include<iostream>
+#include<math.h>
+#include<string.h>
 using namespace std;
 
-class add{
-    int a,b;
-    public:
-    void setnumber(int num1, int num2){
-        a=num1;
-        b=num2;
-    }
-    friend int sum(add c);
-};
-int sum(add c){
-    return c.a+c.b;
-}
-
 int main(){
-    add nums;
-    int num1,num2;
-    cout << "Enter the first number: ";
-    cin >> num1;
 
-    cout << "Enter the second number: ";
-    cin >> num2;
+    int n;
+    cin>>n;
+    int base=1,temp=0;
+    
+    while(n!=0){
+        int last_digit = n%10;
+        n/=10;
+        
+        temp += last_digit * base;
 
-    nums.setnumber(num1, num2);
+        base = base * 2;
+    }
+    cout<<temp;
 
-    int result = sum(nums);
-    cout << "Sum is: " << result;
 }
+
+//--------friend function function ----------------------
+// #include<iostream>
+// using namespace std;
+
+// class add{
+//     int a,b;
+//     public:
+//     void setnumber(int num1, int num2){
+//         a=num1;
+//         b=num2;
+//     }
+//     friend int sum(add c);
+// };
+// int sum(add c){
+//     return c.a+c.b;
+// }
+
+// int main(){
+//     add nums;
+//     int num1,num2;
+//     cout << "Enter the first number: ";
+//     cin >> num1;
+
+//     cout << "Enter the second number: ";
+//     cin >> num2;
+
+//     nums.setnumber(num1, num2);
+
+//     int result = sum(nums);
+//     cout << "Sum is: " << result;
+// }
