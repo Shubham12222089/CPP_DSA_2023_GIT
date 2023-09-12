@@ -23,11 +23,12 @@ int main(){
     // }
 
 
-    //input
+    //taking input
 
     pair<int,string> s;
-    cin>>s.first;
+    cin>>s.first>>s.second;
     cout<<s.first;
+    cout<<s.second;
     
 
 }
