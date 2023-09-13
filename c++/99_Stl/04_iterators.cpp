@@ -14,10 +14,18 @@ int main(){
     //for accessing pair
     vector<pair<int,int>> vp={{1,2},{2,3},{3,4}};
     vector<pair<int,int>> :: iterator it;
+
+    //for printing first method 
     for (it = vp.begin();it!=vp.end();++it)
     {
         cout<<(*it).first<<" "<<(*it).second<<endl;
     }
+
+    //second method
+    for(int &value : v){
+        cout<<value<<" ";
+    }
+    cout<<endl;
     
     
 }

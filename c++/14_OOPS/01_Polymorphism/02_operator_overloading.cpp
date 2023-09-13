@@ -6,6 +6,8 @@ using namespace std;
 //we cannot use operator overloading for basic types such as int, double,etc;
 
 // It's a COMPILE TIME POLYMORPHISM.
+
+//conditions operators,dot operators are not used in operator overloading.
 class Count{
     int value;
 
@@ -32,3 +34,13 @@ int main(){
 
     count1.display();
 }
+
+
+/*
+    *Rules of operator overloading
+1 -- atleast one of the operand must be user defined class objects.
+2 -- we can only overload existing operators
+3 -- some operators cannot overloaded
+    -> ?:, ::, .,
+
+*/

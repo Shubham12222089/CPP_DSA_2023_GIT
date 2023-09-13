@@ -37,6 +37,21 @@ void mid(Node* &head){
     cout<<"Middle element is: "<<slow->data<<endl;
 }
 
+//reverse a linked list
+void reverse(Node* &head){
+    Node* prev=NULL;
+    Node* curr=head;
+    Node* next;
+    while(curr!=NULL){
+        next=curr->next;
+        curr->next=prev;
+
+        prev=curr;
+        curr=next;
+    }
+    head=prev; 
+}
+
 int main(){
     Node* head = NULL;
     insertionathead(head,50);
@@ -47,5 +62,9 @@ int main(){
     display(head);
     cout<<endl;
     mid(head);
+
+    reverse(head);
+    cout<<endl;
+    display(head);
 
 }

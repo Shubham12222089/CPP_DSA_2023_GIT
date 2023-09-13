@@ -26,9 +26,9 @@ int main(){
     //taking input
 
     pair<int,string> s;
-    cin>>s.first>>s.second;
+    cin>>s.first;
     cout<<s.first;
-    cout<<s.second;
+    
     
 
 }
