@@ -1,44 +1,44 @@
 //binary search is monotonic function.
-// #include<iostream>
-// using namespace std;
+#include<iostream>
+using namespace std;
 
-// int binary_search(int n,int arr[],int key){
-//     int start = 0;
-//     int end = n-1;
-//     int mid = (start+end)/2;
-//     while(start<=end){
-//         //mid
-//         if(arr[mid]==key){
-//         return mid;
-//         }
-//         else if(arr[mid]>key){
-//             //right
-//             start = mid+1;
-//         }
-//         else{
-//             //left
-//             end = mid - 1; 
-//         }
-//         mid = (start + end)/2; //updated mid.
-//     }
-//     return -1;
+int binary_search(int n,int arr[],int key){
+    int start = 0;
+    int end = n-1;
+    int mid = (start+end)/2;
+    while(start<=end){
+        //mid
+        if(arr[mid]==key){
+        return mid;
+        }
+        else if(arr[mid]>key){
+            //right
+            start = mid+1;
+        }
+        else{
+            //left
+            end = mid - 1; 
+        }
+        mid = (start + end)/2; //updated mid.
+    }
+    return -1;
 
-// }
+}
 
-// int main(){
-//     int key,n;
-//     cout<<"Enter the size: ";
-//     cin>>n;
-//     int arr[100];
-//     for(int i = 0;i<n;i++){
-//         cin>>arr[i];
-//     }
-//     cout<<"Enter the key: ";
-//     cin>>key;
-//     int temp = binary_search(n,arr,key);
-//     cout<<"index of "<<key<<" is: "<<temp<<endl;
+int main(){
+    int key,n;
+    cout<<"Enter the size: ";
+    cin>>n;
+    int arr[100];
+    for(int i = 0;i<n;i++){
+        cin>>arr[i];
+    }
+    cout<<"Enter the key: ";
+    cin>>key;
+    int temp = binary_search(n,arr,key);
+    cout<<"index of "<<key<<" is: "<<temp<<endl;
 
-// }
+}
 
 
 
@@ -98,43 +98,43 @@
 
 // }
 
-#include<iostream>
-using namespace std;
+// #include<iostream>
+// using namespace std;
 
-void original(int n,int arr[],int temp){
-    for (int i = 0; i < n; i++)
-    {
-        cout<<arr[i]<<" ";
-    }
+// void original(int n,int arr[],int temp){
+//     for (int i = 0; i < n; i++)
+//     {
+//         cout<<arr[i]<<" ";
+//     }
     
-}
+// }
 
-void updated(int n,int arr[],int temp){
+// void updated(int n,int arr[],int temp){
     
-    for (int i = n; i > 0; i--)
-    {
-        arr[i]=arr[i-1];
-    }
-    arr[0] = temp;
+//     for (int i = n; i > 0; i--)
+//     {
+//         arr[i]=arr[i-1];
+//     }
+//     arr[0] = temp;
     
-}
+// }
 
-int main(){
-    int n,temp;
-    cin>>n;
-    int arr[100];
-    for (int i = 0; i < n; i++)
-    {
-        cin>>arr[i];
-    }
-    cout<<"enter the value you want to insert: ";
-    cin>>temp;
-    original(n,arr,temp);
-    updated(n,arr,temp);
-    for (int i = 0; i < n+1; i++)
-    {
-        cout<<arr[i]<<" ";
-    }
+// int main(){
+//     int n,temp;
+//     cin>>n;
+//     int arr[100];
+//     for (int i = 0; i < n; i++)
+//     {
+//         cin>>arr[i];
+//     }
+//     cout<<"enter the value you want to insert: ";
+//     cin>>temp;
+//     original(n,arr,temp);
+//     updated(n,arr,temp);
+//     for (int i = 0; i < n+1; i++)
+//     {
+//         cout<<arr[i]<<" ";
+//     }
     
     
-}
+// }

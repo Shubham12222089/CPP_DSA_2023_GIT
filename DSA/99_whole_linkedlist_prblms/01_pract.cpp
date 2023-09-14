@@ -51,6 +51,29 @@ void reverse(Node* &head){
     }
     head=prev; 
 }
+void conversion_sl_cr(Node* &head){
+    //Node* n=new Node(val);
+    Node* temp=head;
+    if(temp->next!=NULL){
+        temp=temp->next;
+    }
+    temp->next=head;
+}
+void loopdetection(Node* &head){
+    Node* temp=head;
+    Node* fast=head;
+    Node* slow=head;
+    while(fast!=NULL && fast->next!=NULL){
+        slow=slow->next;
+        fast=fast->next->next;
+        if(slow==fast){
+            cout<<"loop exist."<<endl;
+            return;
+    }
+    }
+    
+}
+
 
 int main(){
     Node* head = NULL;
@@ -66,5 +89,9 @@ int main(){
     reverse(head);
     cout<<endl;
     display(head);
+
+    conversion_sl_cr(head);
+    cout<<endl;
+    loopdetection(head);
 
 }
