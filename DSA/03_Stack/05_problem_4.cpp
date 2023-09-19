@@ -9,7 +9,7 @@ int prefix(string s){
 
     for (int i = s.length()-1; i >= 0; i--)
     {
-        if(s[i]>='0' && s[i] <= '9'){
+        if(s[i]>='0' && s[i] <= '9'){//s is string so we have to do this.
             st.push(s[i] - '0');
         }
         else{//if i have an operator
@@ -75,9 +75,9 @@ int postfix(string s){
     return st.top();
 }
 int main(){
-    //string s="-+7*45+20";
-    string s="745*+20+-";
-    //cout<<prefix(s)<<endl;
-    cout<<postfix(s)<<endl;
+    string s="-+7*45+20";
+    string p="42*3+";
+    cout<<prefix(s)<<endl;
+    cout<<postfix(p)<<endl;
 
 }
