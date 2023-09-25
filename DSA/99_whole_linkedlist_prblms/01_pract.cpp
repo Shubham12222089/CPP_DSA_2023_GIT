@@ -52,7 +52,6 @@ void reverse(Node* &head){
     head=prev; 
 }
 void conversion_sl_cr(Node* &head){
-    //Node* n=new Node(val);
     Node* temp=head;
     if(temp->next!=NULL){
         temp=temp->next;
@@ -60,7 +59,6 @@ void conversion_sl_cr(Node* &head){
     temp->next=head;
 }
 void loopdetection(Node* &head){
-    Node* temp=head;
     Node* fast=head;
     Node* slow=head;
     while(fast!=NULL && fast->next!=NULL){

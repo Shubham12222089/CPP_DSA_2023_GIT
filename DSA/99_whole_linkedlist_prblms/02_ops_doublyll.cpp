@@ -29,7 +29,7 @@ void insertattail(Node* &head,int val){
         head=n;
     }
     Node* temp=head;
-    while(temp!=NULL){
+    while(temp->next!=NULL){
         temp=temp->next;
     }
     temp->next=n;
