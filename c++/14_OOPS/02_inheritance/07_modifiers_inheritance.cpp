@@ -2,7 +2,7 @@
 using namespace std;
 
 /*
-    public inherotance make public members of the base class public in derived class.
+    public inheritance make public members of the base class public in derived class.
     and protected members of base class will remain PROTECTED in derived class.
 
     protected inheritance makes the PUBLIC and PROTECTED members of base class PROTECTED

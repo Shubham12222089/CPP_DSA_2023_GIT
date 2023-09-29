@@ -28,5 +28,5 @@ int main(){
 
     cout<<"Public : "<<obj1.public1<<endl;
     cout<<"Private : "<<obj1.getProtectedValue()<<endl;
-    cout<<"Public : "<<obj1.getPrivateValue()<<endl;
+    cout<<"Private : "<<obj1.getPrivateValue()<<endl;
 }
