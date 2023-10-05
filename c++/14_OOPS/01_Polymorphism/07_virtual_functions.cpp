@@ -1,6 +1,7 @@
 #include<iostream>
 using namespace std;
 
+/*VIRTUAL FUNCTION*/
 //a virtual function is a member function in the
 //base class that we expect to redefine in derived class.
 // a virtual func is used in base class in order to insure 
@@ -9,10 +10,18 @@ using namespace std;
 //This especially applies to cases where a pointer of base class
 //points to an object of a derived class.
 
-/* Override
+/* OVERRIDE
     the override identifier specifies the member function of 
     the derived class that overrides the member funcn of the 
     base class.
+
+    when using virtual functions it is possible to mistake 
+    while declaring the member function of the derived class
+    using overide identifier the compiler prompts the compiler
+    to display error.
+
+    possible mistakes :- function with incorrect spellings,
+    names,different parameters, different return types.
 */
 
 class Base{

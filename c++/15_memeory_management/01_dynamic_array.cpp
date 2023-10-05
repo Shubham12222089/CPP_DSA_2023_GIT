@@ -21,3 +21,5 @@ int main(){
     }
     cout<<"sum is : "<<getSum(arr,n);
 }
+
+

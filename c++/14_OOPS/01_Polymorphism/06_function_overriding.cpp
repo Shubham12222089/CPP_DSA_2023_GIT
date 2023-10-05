@@ -27,14 +27,14 @@ int main(){
 
 /*
     we have same function in base class as well as 
-    derived class, when ewe call the function using
+    derived class, when we call the function using
     the object of derived class , the function of 
-    derived class is executed instead of thee base class.
+    derived class is executed instead of the base class.
 
     when we class print() using d1, it overrides the 
     print() of the base class.
 
-     it's runtime polymorphism because the function
-     call is not resolved 
+    it's runtime polymorphism because the function
+    call is not resolved 
 
 */

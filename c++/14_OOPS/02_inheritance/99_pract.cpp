@@ -43,57 +43,58 @@
     Use appropriate data types and formatting for displaying employee information.
 */
 
-#include <iostream>
-#include <string>
-#include <iomanip>
+// #include <iostream>
+// #include <string>
+// #include <iomanip>
 
-using namespace std;
-class Person {
-private:
-    string name;
-    int age;
-public:
-    Person(string n, int a){
-        name = n;
-        age = a;
+// using namespace std;
+// class Person {
+// private:
+//     string name;
+//     int age;
+// public:
+//     Person(string n, int a){
+//         name = n;
+//         age = a;
 
-    }
+//     }
 
-    void displayInfo() {
-        cout << "Name: " << name << endl;
-        cout << "Age: " << age << endl;
-    }
-};
-class Employee : public Person {
-private:
-    int empid;
-    double salary;
-public:
-    Employee(string n, int a, int id, double s){
-        Person(n,a);
-        empid=id;
-        salary=s;
-    }
+//     void displayInfo() {
+//         cout << "Name: " << name << endl;
+//         cout << "Age: " << age << endl;
+//     }
+// };
+// class Employee : public Person {
+// private:
+//     int empid;
+//     double salary;
+// public:
+//     Employee(string n, int a, int id, double s){
+//         Person(n,a);
+//         empid=id;
+//         salary=s;
+//     }
 
-    void displayInfo() {
+//     void displayInfo() {
         
-        Person::displayInfo();
-        cout << "Employee ID: " << empid << endl;
-        cout << fixed << setprecision(2) << "Salary: $" << salary << endl;
-    }
+//         Person::displayInfo();
+//         cout << "Employee ID: " << empid << endl;
+//         cout << fixed << setprecision(2) << "Salary: $" << salary << endl;
+//     }
 
 
-};
+// };
 
-int main() {
-    Person person1("Abhay", 20);
-    Employee emp1("Priyanshu", 25, 1001, 50000.0);
+// int main() {
+//     Person person1("Abhay", 20);
+//     Employee emp1("Priyanshu", 25, 1001, 50000.0);
 
-    cout << "Person Info:" << endl;
-    person1.displayInfo();
+//     cout << "Person Info:" << endl;
+//     person1.displayInfo();
     
-    cout << "\nEmployee Info:" << endl;
-    emp1.displayInfo();
+//     cout << "\nEmployee Info:" << endl;
+//     emp1.displayInfo();
 
-    return 0;
-}
+//     return 0;
+// }
+
