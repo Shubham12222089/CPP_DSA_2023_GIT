@@ -34,5 +34,5 @@ int main(){
     cout<<"Enter the number of disks: ";
     cin>>n;
 
-    towerofHanoi(n,'A','B','c');
+    towerofHanoi(n,'A','B','C');
 }

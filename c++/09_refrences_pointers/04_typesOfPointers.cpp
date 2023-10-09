@@ -48,7 +48,7 @@ using typecasting the void pointer.
 
 /*
     4.wild pointers - when a pointer is declared but not 
-    initailzed, they point at a random momory location.
+    initailized, they point at a random momory location.
 */
 // int mai(){
 //     int a = 5;

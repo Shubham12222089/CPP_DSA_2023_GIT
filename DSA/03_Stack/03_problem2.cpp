@@ -48,7 +48,7 @@ bool isValid(string s){
     return true;
 }
 int main(){
-    string s = "[";
+    string s = "[({()})]";
 
     if(!isValid(s)){
         cout<< "Invalid";
