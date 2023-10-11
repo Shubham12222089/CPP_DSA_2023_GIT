@@ -8,11 +8,38 @@ class Node{
     Node* right;
 
     Node(int val){
-        int data = val;
-        Node* left = NULL;
-        Node* right = NULL;
+        data = val;
+        left = NULL;
+        right = NULL;
     }
 };
+
+void preorder(Node* root){
+    if(root==NULL){
+        return;
+    }
+    cout<<root->data<<" ";
+    preorder(root->left);
+    preorder(root->right);
+}
+
+void inorder(Node* root){
+    if(root==NULL){
+        return;
+    }
+    inorder(root->left);
+    cout<<root->data<<" ";
+    inorder(root->right);
+}
+
+void postorder(Node* root){
+    if(root==NULL){
+        return;
+    }
+    postorder(root->left);
+    postorder(root->right);
+    cout<<root->data<<" ";
+}
 
 int main(){
     Node* root = new Node(1);
@@ -23,5 +50,13 @@ int main(){
     root->left->right = new Node(5);
     root->right->left = new Node(6);
     root->right->right = new Node(7);
+    cout<<"Preorder is : ";
+    preorder(root);
+    cout<<endl;
+    cout<<"Inorder is : ";
+    inorder(root);
+    cout<<endl;
+    cout<<"Postorder is : ";
+    postorder(root);
 
 }
