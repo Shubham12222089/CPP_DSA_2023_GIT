@@ -45,6 +45,57 @@ void inorder(Node* root){
     inorder(root->right);
 }
 
+Node* INorderSuccessor(Node* root){
+    Node* curr = root;
+    while(curr && curr->left != NULL){
+        curr=curr->left;
+    }
+    return curr;
+}
+
+Node* deleteInBST(Node* root,int key){
+    if(key < root->data){
+        root->left = deleteInBST(root->left, key);
+    }
+    else if(key>root->data){
+        root->right = deleteInBST(root->right, key);
+    }
+    else{
+        if(root->left == NULL){
+            Node* temp=root->right;
+            delete root;
+            return temp;
+        }
+        else if(root->right == NULL){
+            Node* temp=root->left;
+            delete root;
+            return temp;
+
+        }
+        //case 3
+        Node* temp=INorderSuccessor(root->right);
+        root->data = temp->data;
+        root->right = deleteInBST(root->right,temp->data);
+    
+    }
+    return root;
+
+}
+
+int count(Node* root){
+    if(root==NULL){
+        return 0;
+    }
+    return 1 + count(root->left) + count(root->right);
+}
+
+int rightview(Node* root){
+    if(root==NULL){
+        return ;
+    }
+    return rightview(root->right);
+}
+
 int main(){
     Node* root = NULL;
 
@@ -56,5 +107,8 @@ int main(){
     insertBST(root,7);
 
     inorder(root);
+    cout<<endl;
+    cout << "Number of nodes : "<<count(root);
 
+    cout<<rightview(root);
 }
