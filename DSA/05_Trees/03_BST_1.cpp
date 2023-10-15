@@ -89,12 +89,6 @@ int count(Node* root){
     return 1 + count(root->left) + count(root->right);
 }
 
-int rightview(Node* root){
-    if(root==NULL){
-        return ;
-    }
-    return rightview(root->right);
-}
 
 int main(){
     Node* root = NULL;
@@ -110,5 +104,4 @@ int main(){
     cout<<endl;
     cout << "Number of nodes : "<<count(root);
 
-    cout<<rightview(root);
 }
