@@ -11,12 +11,16 @@ using namespace std;
 
     eg -> in linked list , trees
 */
-
+//self referential class with single link
 class Node{
     public:
     int data;
     Node* next;
 };
+
+
+//self referential class with multiple link
+//we can make like doubly linked list
 
 int main(){
     Node obj1;

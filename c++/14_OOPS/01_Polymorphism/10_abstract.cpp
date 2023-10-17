@@ -28,6 +28,12 @@ using namespace std;
     //all the functions of square and rectangle are clubbed in a single class.
     //we could have made a parent class of shape , we could have different class.
 
+    //characteristics-
+    //1     abstract class must have atleast on pure virtual function.
+    //2     abstract classesss can not be intantiated, but pointers and refrences of abstract type class
+    // can be created . we can not create objected of an abstract class.
+
+    //3     classes that inherits the abstractclass must implement all pure virtual function.
     
 //};
 

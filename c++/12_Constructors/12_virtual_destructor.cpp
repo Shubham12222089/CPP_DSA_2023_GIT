@@ -38,4 +38,4 @@ int main(){
 // but the child class's destructor is not invoked. As seen in logs,
 //the destructor of child class is not invoked because the class pointer
 //can only remove the base class's destructor, which causes the 
-//problem of memory leak in the 
+//problem of memory leak in the program. so the solution is virtual keyword in base class.
