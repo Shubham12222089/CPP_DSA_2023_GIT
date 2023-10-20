@@ -8,7 +8,7 @@ public:
   Node* left;
   Node* right;
 
-  // Constructor to initialize data, left, and right pointers
+  
   Node(int val) {
     data = val;
     left = nullptr;
