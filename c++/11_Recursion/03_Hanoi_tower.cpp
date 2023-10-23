@@ -15,24 +15,44 @@ using namespace std;
     - never a larger disk is placed on the smaller disk during the transfer. 
 */
 
-void towerofHanoi(int n,char src,char aux,char dest){
+// void towerofHanoi(int n,char src,char aux,char dest){
+//     if(n==1){
+//         cout<< "Moved disk "<<n<<" from "<< src << " to "<<dest<<endl;
+//         return;
+//     }
+
+//     towerofHanoi(n-1,src,dest,aux);
+
+//     cout<< "Moved disk "<<n<<" from "<< src << " to "<<dest<<endl;
+
+//     towerofHanoi(n-1,aux,src,dest);
+// }
+
+// int main(){
+
+//     int n;
+//     cout<<"Enter the number of disks: ";
+//     cin>>n;
+
+//     towerofHanoi(n,'A','B','C');
+// }
+
+int toh(int n,int source,int dest,int aux){
     if(n==1){
-        cout<< "Moved disk "<<n<<" from "<< src << " to "<<dest<<endl;
-        return;
+        cout<<"move disk 1 from rod "<<source<<" to rod "<<dest<<endl;
+        return 1;
     }
-
-    towerofHanoi(n-1,src,dest,aux);
-
-    cout<< "Moved disk "<<n<<" from "<< src << " to "<<dest<<endl;
-
-    towerofHanoi(n-1,aux,src,dest);
+    int moves=1;
+    moves+=toh(n-1,source,aux,dest);
+    cout<<"move disk "<<n<<" from rod "<<source<<" to rod "<<dest<<endl;
+    moves+=toh(n-1,aux,dest,source);
+    return moves;
 }
 
 int main(){
-
     int n;
-    cout<<"Enter the number of disks: ";
+    cout<<"enter the number of disks: ";
     cin>>n;
 
-    towerofHanoi(n,'A','B','C');
+    toh(n,1,3,2);
 }
