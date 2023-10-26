@@ -176,37 +176,109 @@
 // }
 
 // Online C++ compiler to run C++ program online
-#include <iostream>
-#include<stack>
-using namespace std;
-void rev(stack<int> &st){
-    stack<int> temp;
-    while(!st.empty()){
-        temp.push(st.top());
-        st.pop();
-    }
+// #include <iostream>
+// #include<stack>
+// using namespace std;
+// void rev(stack<int> &st){
+//     stack<int> temp;
+//     while(!st.empty()){
+//         temp.push(st.top());
+//         st.pop();
+//     }
 
-    while(!temp.empty()){
-        st.push(temp.top());
-        temp.pop();
+//     while(!temp.empty()){
+//         st.push(temp.top());
+//         temp.pop();
+//     }
+// }
+
+// int main() {
+//     stack<int> s;
+//     s.push(1);
+//     s.push(2);
+//     s.push(3);
+//     s.push(4);
+//     s.push(5);
+//     s.push(6);
+    
+//     rev(s);
+//     while(!s.empty()){
+//         cout<<s.top()<<" ";
+//         s.pop();
+//     }
+    
+
+//     return 0;
+// }
+
+#include<iostream>
+using namespace std;
+struct node{
+    int data;
+    struct node* next;
+};
+void createnode(struct node* &head,int value)
+{
+    struct node* newnode=new node();
+    struct node* temp=head;
+    newnode->data=value;
+    newnode->next=NULL;
+    if(head==NULL)
+    {
+        head=newnode;
+        return ;
+    }
+    else
+    {
+        while(temp->next!=NULL)
+        {
+            temp=temp->next;
+        }
+        temp->next=newnode;
     }
 }
-
-int main() {
-    stack<int> s;
-    s.push(1);
-    s.push(2);
-    s.push(3);
-    s.push(4);
-    s.push(5);
-    s.push(6);
-    
-    rev(s);
-    while(!s.empty()){
-        cout<<s.top()<<" ";
-        s.pop();
+void reverselinkedlist(struct node * &head)
+{
+    struct node *previous=NULL;
+    struct node *current=head;
+    struct node *next=NULL;
+    while(current!=NULL)
+    {
+        next=current->next;
+        current->next=previous;
+        previous=current;
+        current=next;
     }
-    
-
+    head=previous;
+}
+void display(struct node* & head)
+{   
+    struct node* temp=head;
+    while(temp!=NULL)
+    {
+        cout<<temp->data<<" ";
+        temp=temp->next;
+    }
+}
+int main()
+{   struct node* head=NULL;
+    int n;
+    while(1)
+    {
+        cout<<"enter the element=";
+        cin>>n;
+        if(n==0)
+        {
+        break;}
+        else{
+            createnode(head,n);
+        }
+    }
+    cout<<"original linked list:";
+    display(head);
+    cout<<"\n";
+    cout<<"reversed linked list:";
+    reverselinkedlist(head);
+    display(head);
     return 0;
 }
