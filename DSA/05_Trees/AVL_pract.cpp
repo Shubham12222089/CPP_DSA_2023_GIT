@@ -105,6 +105,6 @@ int main() {
     root = insert(root, 4);
     root = insert(root, 5);
     root = insert(root, 8);
-    root = insert(root, 46); // Changed to 46 to avoid duplicate key
+    root = insert(root, 46); 
     return 0;
 }

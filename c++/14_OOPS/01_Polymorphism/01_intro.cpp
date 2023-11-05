@@ -21,18 +21,46 @@
 
 
 //-----------------------------------
+// #include<iostream>
+// using namespace std;
+// int sum(int a,int b){
+//     return a+b;
+// }
+// int sum(double a,double b){
+//     return a+b;
+// }
+// int sum(int a,int b,int c){
+//     return a+b+c;
+// }
+// int main(){
+//     int a,b,c;
+//     cout<<sum(2,2);
+// }
+
+
 #include<iostream>
 using namespace std;
-int sum(int a,int b){
-    return a+b;
-}
-int sum(double a,double b){
-    return a+b;
-}
-int sum(int a,int b,int c){
-    return a+b+c;
-}
+
+class game1{
+    public:
+    void s(string g){
+        cout<<"game is : "<<g<<endl;
+    }
+};
+
+class game2 {
+    public:
+    void s(string g){
+        cout<<"game is "<<g<<endl;
+    }
+};
+class c : public game1,public game2{
+    
+    
+};
+
 int main(){
-    int a,b,c;
-    cout<<sum(2,2);
+    c obj;
+    obj.game1::s("cricket");
+    obj.game2::s("Football");
 }
